@@ -1,0 +1,13 @@
+# Arquivos sensíveis
+.env
+
+# Ambiente virtual
+venv/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Configs do editor (opcional)
+.vscode/
+.idea/
