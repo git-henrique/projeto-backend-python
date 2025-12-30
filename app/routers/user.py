@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPExeception
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.database import SessionLocal
@@ -17,7 +17,6 @@ def get_db():
 @router.post("/register", response_model=UserResponse)
 def register(user: UserCreate, db: Session = Depends(get_db)):
     if get_user_by_email(db, user.email):
-        raise HTTPExeception(status_code=400, detail="Email já cadastrado")
-    
+        raise HTTPException(status_code=400, detail="Email já cadastrado")
 
     return create_user(db, user)

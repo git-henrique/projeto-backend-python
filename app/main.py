@@ -6,7 +6,7 @@ from app.routers import user
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="API de Agendamentos")
+app = FastAPI(title="API de Agendamentos", debug=True)
 app.include_router(user.router)
 
 @app.get("/")
