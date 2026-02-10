@@ -11,3 +11,6 @@ __pycache__/
 # Configs do editor (opcional)
 .vscode/
 .idea/
+
+# Database local
+*.db
